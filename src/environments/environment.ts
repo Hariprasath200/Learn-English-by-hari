@@ -1,4 +1,4 @@
 export const environment = {
   production: false,
-  apiUrl: "http://hari-backend.onrender.com/api"
+  apiUrl: "https://hari-backend.onrender.com/api"
 };
