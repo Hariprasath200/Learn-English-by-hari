@@ -1,0 +1,28 @@
+<div class="wrapper">
+
+  <h1>🔌 API Health Check</h1>
+
+  @if (status() === 'checking') {
+    <div>
+      <p>⏳ Checking API...</p>
+    </div>
+  }
+
+  @if (status() === 'online') {
+    <div>
+      <h2>✅ API is Online</h2>
+      <p>Response Time: {{ responseTime() }}ms</p>
+      <pre>{{ apiResponse() | json }}</pre>
+    </div>
+  }
+
+  @if (status() === 'offline') {
+    <div>
+      <h2>❌ API is Offline</h2>
+      <p>{{ errorMessage() }}</p>
+    </div>
+  }
+
+  <button (click)="testApi()">🔄 Retest</button>
+
+</div>
